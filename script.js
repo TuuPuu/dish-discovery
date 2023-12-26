@@ -248,12 +248,33 @@ const dataItems =[
 console.log(dataItems)
 console.log(dataItems[0].snippet)
 
-var search= $("search").val()
-fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rating&q="+search+"&type=video&key=AIzaSyAk79jO8CvLdZ_YqsuS1D-8KE9hRawHOfY")
-// .then((res)=>{
-//     return res.json()
-// }) 
-// .then((data)=>{
+var search = $("search").val()
+fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rating&q=" + search + "&type=video&key=AIzaSyAk79jO8CvLdZ_YqsuS1D-8KE9hRawHOfY")
+    .then((res)=>{
+        return res.json()
+    }) 
+    .then((data)=>{
+        if (data.items.length > 0) {
+            var videoId = data.items[0].id.videoId;
+            var videoTitle = data.items[0].snippet.title;
+            var thumbnailUrl = data.items[0].snippet.thumbnails.default.url;
+
+            displayVideo(videoId, videoTitle, thumbnailUrl);
+
+        } else {
+            console.log('No video found');
+        }
+    });
+
+function displayVideo(videoId, videoTitle, thumbnailUrl) {
+    var divEl= $(".youtube-vid");
+    var title = $("<h1>").text(title);
+    var image = $("<img>").attr("src",thumbnail);
+    var VLink = $("<a>").anchorTag.attr("href",fullUrl).text("hello").anchorTag.attr("target","_blank")
+
+    divEl.append(title, image,anchorTag)
+}
+
 //     console.log(data)
 //     var thumbnailUrl= data.items[0].snippet.thumbnails.default.url;
 
@@ -263,24 +284,20 @@ fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rati
 //    var url = youtubeUrl+videoID
 //    console.log
 //    "https://www.youtube.com/watch?v=Z9yaG27quz0"
+// console.log(dataItems)
+// console.log(dataItems[0].id.videoId)
+// console.log(dataItems[0].snippet.title)
+// var title= dataItems[0].snippet.title
+// var videoId =dataItems[0].id.videoId
+// var youtubeUrl= "https://www.youtube.com/watch?v="
+// var fullUrl = youtubeUrl+videoId
+// var thumbnail= dataItems[0].snippet.thumbnails.default.url
 
-console.log(dataItems[0].id.videoId)
-console.log(dataItems[0].snippet.title)
-var title= dataItems[0].snippet.title
-var videoId =dataItems[0].id.videoId
-var youtubeUrl= "https://www.youtube.com/watch?v="
-var fullUrl = youtubeUrl+videoId
-var thumbnail= dataItems[0].snippet.thumbnails.default.url
 
 
-var divEl= $("#player-container")
-var title = $("<h1>").text(title)
-var image= $("<img>");
-var anchorTag = $("<a>");
-anchorTag.attr("href",fullUrl).text("hello")
-anchorTag.attr("target","_blank")
-image.attr("src",thumbnail)
-divEl.append(title, image,anchorTag)
+
+
+
 
 
 // //    step number 1- extract thumbnail url 
@@ -299,5 +316,8 @@ divEl.append(title, image,anchorTag)
 
   
 // })
+
+
+
 
 
