@@ -248,7 +248,7 @@ const dataItems =[
 console.log(dataItems)
 console.log(dataItems[0].snippet)
 
-var search = $("search").val()
+var search = 'Veggie Burgers'
 fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rating&q=" + search + "&type=video&key=AIzaSyAk79jO8CvLdZ_YqsuS1D-8KE9hRawHOfY")
     .then((res)=>{
         return res.json()
@@ -258,6 +258,8 @@ fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rati
             var videoId = data.items[0].id.videoId;
             var videoTitle = data.items[0].snippet.title;
             var thumbnailUrl = data.items[0].snippet.thumbnails.default.url;
+            var youtubelink = "https://www.youtube.com/watch?v="
+            var fullUrl = youtubelink + videoId
 
             displayVideo(videoId, videoTitle, thumbnailUrl);
 
@@ -266,13 +268,14 @@ fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rati
         }
     });
 
-function displayVideo(videoId, videoTitle, thumbnailUrl) {
+function displayVideo(fullUrl, videoTitle, thumbnailUrl) {
     var divEl= $(".youtube-vid");
-    var title = $("<h1>").text(title);
-    var image = $("<img>").attr("src",thumbnail);
-    var VLink = $("<a>").anchorTag.attr("href",fullUrl).text("hello").anchorTag.attr("target","_blank")
+    var title = $("<h3>").text(videoTitle);
+    var image = $("<img>").attr("src",thumbnailUrl);
+    var VLink = $("<a>").attr("href",fullUrl).text("hello")
+    VLink.attr("target","_blank")
 
-    divEl.append(title, image,anchorTag)
+    divEl.append(VLink, title, image)
 }
 
 //     console.log(data)
