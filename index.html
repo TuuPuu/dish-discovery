@@ -149,7 +149,7 @@
       }
 
       // YOUTUBE API
-      const dataItems = [
+      /*const dataItems = [
         {
           kind: "youtube#searchResult",
           etag: "euKZ7mdj1jDP5G5bE4PTzgMY43o",
@@ -325,17 +325,18 @@
             publishTime: "2023-03-20T17:47:05Z",
           },
         },
-      ];
+      ];*/
       // let data= JSON.parse(dataItems)
-      console.log(dataItems);
-      console.log(dataItems[0].snippet);
+      // console.log(dataItems);
+      // console.log(dataItems[0].snippet);
 
-      var search = $("search").val();
-      fetch(
-        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rating&q=" +
-          search +
-          "&type=video&key=AIzaSyAk79jO8CvLdZ_YqsuS1D-8KE9hRawHOfY"
-      );
+      // var search = $("search").val();
+      // fetch(
+      //   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rating&q=" +
+      //     search +
+      //     "&type=video&key=AIzaSyAk79jO8CvLdZ_YqsuS1D-8KE9hRawHOfY"
+      // );
+
       // .then((res)=>{
       //     return res.json()
       // })
@@ -350,22 +351,22 @@
       //    console.log
       //    "https://www.youtube.com/watch?v=Z9yaG27quz0"
 
-      console.log(dataItems[0].id.videoId);
-      console.log(dataItems[0].snippet.title);
-      var title = dataItems[0].snippet.title;
-      var videoId = dataItems[0].id.videoId;
-      var youtubeUrl = "https://www.youtube.com/watch?v=";
-      var fullUrl = youtubeUrl + videoId;
-      var thumbnail = dataItems[0].snippet.thumbnails.default.url;
+      // console.log(dataItems[0].id.videoId);
+      // console.log(dataItems[0].snippet.title);
+      // var title = dataItems[0].snippet.title;
+      // var videoId = dataItems[0].id.videoId;
+      // var youtubeUrl = "https://www.youtube.com/watch?v=";
+      // var fullUrl = youtubeUrl + videoId;
+      // var thumbnail = dataItems[0].snippet.thumbnails.default.url;
 
-      var divEl = $("#player-container");
-      var title = $("<h1>").text(title);
-      var image = $("<img>");
-      var anchorTag = $("<a>");
-      anchorTag.attr("href", fullUrl).text("hello");
-      anchorTag.attr("target", "_blank");
-      image.attr("src", thumbnail);
-      divEl.append(title, image, anchorTag);
+      // var divEl = $("#player-container");
+      // var title = $("<h1>").text(title);
+      // var image = $("<img>");
+      // var anchorTag = $("<a>");
+      // anchorTag.attr("href", fullUrl).text("hello");
+      // anchorTag.attr("target", "_blank");
+      // image.attr("src", thumbnail);
+      // divEl.append(title, image, anchorTag);
 
       // SAVE TO FAVOURITES
       // local Storage variables
@@ -404,11 +405,9 @@
 
           const removeButton = $("<button>")
             .text("Remove")
-            .addClass("btn btn-danger");
+            .addClass("remove-button");
 
-          const viewButton = $("<button>")
-            .text("View")
-            .addClass("btn btn-primary");
+          const viewButton = $("<button>").text("View").addClass("view-button");
 
           //  adds click event listeners to buttons
           removeButton.click(function () {

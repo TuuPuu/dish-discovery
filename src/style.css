@@ -84,6 +84,23 @@ form {
   box-sizing: border-box;
 }
 
-.fav-list-item {
-  text-decoration: none;
+
+/* .fav-list-item {
+  list-style-type: none;
+  padding-left: 5px;
+  line-height: 1.5px;
+  display: flex;
+  flex;
 }
+
+.remove-button {
+  display: flex;
+  color: red;
+
+ 
+}
+
+.view-button {
+  display: flex;
+ 
+} */
