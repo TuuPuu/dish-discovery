@@ -84,23 +84,22 @@ form {
   box-sizing: border-box;
 }
 
-
-/* .fav-list-item {
-  list-style-type: none;
-  padding-left: 5px;
-  line-height: 1.5px;
+.list-item-container {
+  list-style: none;
   display: flex;
-  flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-.remove-button {
-  display: flex;
-  color: red;
-
- 
+.list-item-container li {
+  flex-grow: 1;
 }
 
-.view-button {
-  display: flex;
- 
-} */
+.list-item-container button {
+  margin-left: 10px;
+}

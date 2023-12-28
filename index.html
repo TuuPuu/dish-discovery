@@ -389,27 +389,24 @@
       function displaySavedSearches() {
         favoritesList.empty();
 
-        // retrieve saved searches from local storage or creates an empty array if it doesn't exist
+        // retrieve saved searches from local storage or create an empty array if it doesn't exist
         const savedSearches =
           JSON.parse(localStorage.getItem("savedSearches")) || [];
 
-        //iterate over the indices of the saved searches array
+        // iterate over the indices of the saved searches array
         for (let i = 0; i < savedSearches.length; i++) {
-          //Capitalize the first letter of each search query
+          // Capitalize the first letter of each search query
           const capitalisedQuery = capitaliseFirstLetter(savedSearches[i]);
 
-          //creates list item and buttons
-          const listItem = $("<li>")
-            .text(capitalisedQuery)
-            .addClass("fav-list-item");
+          // create a div to enclose the list item and buttons
+          const listItemContainer = $("<div>").addClass("list-item-container");
 
-          const removeButton = $("<button>")
-            .text("Remove")
-            .addClass("remove-button");
+          // create list item and buttons
+          const listItem = $("<li>").text(capitalisedQuery);
+          const removeButton = $("<button>").text("Remove");
+          const viewButton = $("<button>").text("View");
 
-          const viewButton = $("<button>").text("View").addClass("view-button");
-
-          //  adds click event listeners to buttons
+          // add click event listeners to buttons
           removeButton.click(function () {
             removeSearch(savedSearches[i]);
           });
@@ -418,9 +415,11 @@
             getRecipe(savedSearches[i]); // passes the searchQuery to getRecipe
           });
 
-          // append buttons to list item and list item to the favorites list
-          listItem.append(removeButton, viewButton);
-          favoritesList.append(listItem);
+          // append buttons to list item container
+          listItemContainer.append(listItem, removeButton, viewButton);
+
+          // append the list item container to the favoritesList
+          favoritesList.append(listItemContainer);
         }
       }
 
