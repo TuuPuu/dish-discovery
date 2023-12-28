@@ -83,3 +83,7 @@ form {
   height: 100%;
   box-sizing: border-box;
 }
+
+.fav-list-item {
+  text-decoration: none;
+}

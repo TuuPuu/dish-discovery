@@ -91,6 +91,13 @@
           });
       }
 
+      // ADDED SEARCH BUTTON PRESS - made changes here
+      $("form").submit(function (e) {
+        e.preventDefault(); // Prevents the default form submission behavior
+        const searchQuery = $(".search-bar").val();
+        getRecipe(searchQuery); // Passes the searchQuery to getRecipe
+      });
+
       // ADDED ENTER KEY PRESS - made changes here
       $(".search-bar").on("keydown", function (e) {
         if (e.key === "Enter") {
@@ -126,7 +133,7 @@
         recipeSection.append(content);
       }
 
-      // GET INGREDIENTS ARRAY
+      // GET INGREDIENTS ARRAY - made some changes
       function getIngredientsArray(data) {
         const ingredientsArray = [];
         for (let i = 1; i <= 20; i++) {
@@ -388,12 +395,20 @@
         //iterate over the indices of the saved searches array
         for (let i = 0; i < savedSearches.length; i++) {
           //Capitalize the first letter of each search query
-          const capitalizedQuery = capitalizeFirstLetter(savedSearches[i]);
+          const capitalisedQuery = capitaliseFirstLetter(savedSearches[i]);
 
           //creates list item and buttons
-          const listItem = $("<li>").text(capitalizedQuery);
-          const removeButton = $("<button>").text("Remove");
-          const viewButton = $("<button>").text("View");
+          const listItem = $("<li>")
+            .text(capitalisedQuery)
+            .addClass("fav-list-item");
+
+          const removeButton = $("<button>")
+            .text("Remove")
+            .addClass("btn btn-danger");
+
+          const viewButton = $("<button>")
+            .text("View")
+            .addClass("btn btn-primary");
 
           //  adds click event listeners to buttons
           removeButton.click(function () {
@@ -411,7 +426,7 @@
       }
 
       // function to capitalize the first letter of a string
-      function capitalizeFirstLetter(string) {
+      function capitaliseFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
       }
 
