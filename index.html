@@ -36,13 +36,15 @@
         </form>
 
         <!-- FAVOURITE BUTTON -->
-        <i class="fa-solid fa-star" id="addToFavorites"></i>
+        <i class="fa-solid fa-star" id="addToFavorites">
+          <span class="fav-text">Add to Favourites</span></i
+        >
       </div>
 
       <div class="recipeContainer">
         <div>
           <!-- RECIPE DETAIL -->
-          <h3>Recipe Title</h3>
+          <h3>Here are your results:</h3>
           <div class="cardContainer">
             <div class="recipe-detail">
               <h2>Recipe</h2>
@@ -403,8 +405,10 @@
 
           // create list item and buttons
           const listItem = $("<li>").text(capitalisedQuery);
-          const removeButton = $("<button>").text("Remove");
-          const viewButton = $("<button>").text("View");
+          const removeButton = $("<button>")
+            .text("Remove")
+            .addClass("remove-button");
+          const viewButton = $("<button>").text("View").addClass("view-button");
 
           // add click event listeners to buttons
           removeButton.click(function () {
@@ -416,7 +420,7 @@
           });
 
           // append buttons to list item container
-          listItemContainer.append(listItem, removeButton, viewButton);
+          listItemContainer.append(listItem, viewButton, removeButton);
 
           // append the list item container to the favoritesList
           favoritesList.append(listItemContainer);
