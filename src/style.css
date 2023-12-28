@@ -48,6 +48,7 @@ form {
 .search-button {
   width: 3%;
   height: 40px;
+  cursor: pointer;
 }
 
 /* Recipe CSS */
@@ -58,7 +59,7 @@ form {
   padding: 20px;
   font-size: 20px;
   cursor: pointer;
-  transition: all 150, s ease-in-out;
+  transition: all 150s, ease-in-out;
 }
 
 .fa-star:hover {
@@ -70,6 +71,11 @@ form {
   margin-left: px;
   cursor: pointer;
   font-weight: 900;
+}
+
+.alt-fav-text {
+  cursor: not-allowed;
+  text-indent: -9999px;
 }
 
 .recipeContainer {
