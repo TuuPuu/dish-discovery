@@ -112,16 +112,16 @@
         const instructions = data.strInstructions;
 
         const content = `
-        <div class="p-4">
-            <img src="${MealThumb}" alt="${recipeName}" class="img-fluid" style="max-width: 100%; height: auto;">
-            <h2>${recipeName}</h2>
-            <h4>Ingredients:</h4>
-            <ul style="padding-left: 20px">${ingredients}</ul>
-            <h4>Instructions:</h4>
-            <p>${instructions}</p>
-        </div>
-        <br>
-    `;
+              <div class="p-4">
+                  <img src="${MealThumb}" alt="${recipeName}" class="img-fluid" style="max-width: 100%; height: auto;">
+                  <h2>${recipeName}</h2>
+                  <h4>Ingredients:</h4>
+                  <ul style="padding-left: 20px">${ingredients}</ul>
+                  <h4>Instructions:</h4>
+                  <p>${instructions}</p>
+              </div>
+              <br>
+          `;
 
         recipeSection.append(content);
       }
@@ -361,7 +361,7 @@
       divEl.append(title, image, anchorTag);
 
       // SAVE TO FAVOURITES
-      // Local Storage variables
+      // local Storage variables
       const favoritesList = $("#favoritesList");
       const addToFavorites = $("#addToFavorites");
 
@@ -370,7 +370,7 @@
         const savedSearches =
           JSON.parse(localStorage.getItem("savedSearches")) || [];
 
-        // Check if searchQuery already exists in savedSearches
+        // checks if searchQuery already exists in savedSearches
         if (!savedSearches.includes(searchQuery)) {
           savedSearches.push(searchQuery);
           localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
@@ -380,27 +380,42 @@
 
       function displaySavedSearches() {
         favoritesList.empty();
+
+        // retrieve saved searches from local storage or creates an empty array if it doesn't exist
         const savedSearches =
           JSON.parse(localStorage.getItem("savedSearches")) || [];
 
-        savedSearches.forEach((searchQuery) => {
-          const listItem = $("<li>").text(searchQuery);
+        //iterate over the indices of the saved searches array
+        for (let i = 0; i < savedSearches.length; i++) {
+          //Capitalize the first letter of each search query
+          const capitalizedQuery = capitalizeFirstLetter(savedSearches[i]);
+
+          //creates list item and buttons
+          const listItem = $("<li>").text(capitalizedQuery);
           const removeButton = $("<button>").text("Remove");
           const viewButton = $("<button>").text("View");
 
+          //  adds click event listeners to buttons
           removeButton.click(function () {
-            removeSearch(searchQuery);
+            removeSearch(savedSearches[i]);
           });
 
           viewButton.click(function () {
-            getRecipe(searchQuery); // Pass the searchQuery to getRecipe
+            getRecipe(savedSearches[i]); // passes the searchQuery to getRecipe
           });
 
+          // append buttons to list item and list item to the favorites list
           listItem.append(removeButton, viewButton);
           favoritesList.append(listItem);
-        });
+        }
       }
 
+      // function to capitalize the first letter of a string
+      function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+
+      // REMOVE FROM FAVOURITE
       function removeSearch(searchQuery) {
         const savedSearches =
           JSON.parse(localStorage.getItem("savedSearches")) || [];
@@ -417,6 +432,7 @@
 
         displaySavedSearches();
       }
+
       displaySavedSearches();
     </script>
     <!-- <script src="script.js"></script> -->
