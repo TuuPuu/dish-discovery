@@ -361,7 +361,7 @@
       divEl.append(title, image, anchorTag);
 
       // SAVE TO FAVOURITES
-      // Local Storage
+      // Local Storage variables
       const favoritesList = $("#favoritesList");
       const addToFavorites = $("#addToFavorites");
 
@@ -404,13 +404,19 @@
       function removeSearch(searchQuery) {
         const savedSearches =
           JSON.parse(localStorage.getItem("savedSearches")) || [];
-        const updatedSearches = savedSearches.filter(
-          (query) => query !== searchQuery
-        );
+
+        const updatedSearches = [];
+
+        for (let i = 0; i < savedSearches.length; i++) {
+          if (savedSearches[i] !== searchQuery) {
+            updatedSearches.push(savedSearches[i]);
+          }
+        }
+
         localStorage.setItem("savedSearches", JSON.stringify(updatedSearches));
+
         displaySavedSearches();
       }
-
       displaySavedSearches();
     </script>
     <!-- <script src="script.js"></script> -->
