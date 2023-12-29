@@ -1,5 +1,4 @@
 
-
 // function getRandomMeal() {
 //   fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 //     .then(response => response.json())
@@ -46,8 +45,9 @@ $("form").on("submit", function (e){
 
       divEl.append(title,image,vlink,youtubeIframe)
 //get recipe data from API
+    
 function getRecipe() {
-    const searchQuery = $('#searchInput').val();
+    const searchQuery = $('.search-bar').val();
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`)
       .then((response) => response.json())
       .then((data) => {
@@ -65,7 +65,7 @@ function getRecipe() {
   
   // Display recipe
   function displayRecipe(data) {
-    const recipeSection = $('#recipe1');
+    const recipeSection = $('.recipe-detail');
     recipeSection.empty(); // Clear previous content
   
     const recipeName = data.strMeal;
@@ -75,11 +75,11 @@ function getRecipe() {
   
     const content = `
         <div class="p-4">
-            <img src="${MealThumb}" alt="${recipeName}" class="img-fluid">
-            <h2 class="h2">${recipeName}</h2>
-            <h4 class="h4">Ingredients:</h4>
-            <ul>${ingredients}</ul>
-            <h4 class="h4">Instructions:</h4>
+            <img src="${MealThumb}" alt="${recipeName}" class="img-fluid" style="max-width: 100%; height: auto;">
+            <h2>${recipeName}</h2>
+            <h4>Ingredients:</h4>
+            <ul style="padding-left: 20px">${ingredients}</ul>
+            <h4>Instructions:</h4>
             <p>${instructions}</p>
         </div>
         <br>
@@ -105,7 +105,7 @@ function getRecipe() {
   
   
   // Enter keypress for search input
-  $('#searchInput').on('keydown', function (e) {
+  $('.search-bar').on('keydown', function (e) {
     if (e.key === 'Enter') {
       // 'Enter' key pressed
       e.preventDefault(); // Prevent the default behavior (form submission)
