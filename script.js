@@ -249,7 +249,7 @@ console.log(dataItems)
 console.log(dataItems[0].snippet)
 
 var search= $("search").val()
-fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rating&q="+search+"&type=video&key=AIzaSyAk79jO8CvLdZ_YqsuS1D-8KE9hRawHOfY")
+// fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&&order=rating&q="+search+"&type=video&key=AIzaSyAk79jO8CvLdZ_YqsuS1D-8KE9hRawHOfY")
 // .then((res)=>{
 //     return res.json()
 // }) 
@@ -300,4 +300,25 @@ divEl.append(title, image,anchorTag)
   
 // })
 
+// Add this in your script.js file or within <script> tags at the end of your HTML body
+const form = document.querySelector('form');
+const modal = document.getElementById('modal');
+const closeButton = document.querySelector('.close');
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  showModal();
+});
+
+closeButton.addEventListener('click', function () {
+  closeModal();
+});
+
+function showModal() {
+  modal.style.display = 'block';
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+}
 
