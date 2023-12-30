@@ -2,78 +2,145 @@
 
 /* Universal CSS */
 :root {
-    --main-green: #88cfd1; /* Main color */
-    --accent-green: #57b4b6; /* Accent color */
-    --background-light: #f6f6f6; /* Light background color */
-    --dark: #333; /* Dark text */
-    --light: #fff; /* Light text */
-    --border-color: #d1d1d1; /* Border color */
-    --yellow: #ffd700; /* Light gray on hover */
+  --main-green: #88cfd1; /* Main color */
+  --accent-green: #57b4b6; /* Accent color */
+  --background-light: #f6f6f6; /* Light background color */
+  --dark: #333; /* Dark text */
+  --light: #fff; /* Light text */
+  --border-color: #d1d1d1; /* Border color */
+  --yellow: #ffd700; /* Light gray on hover */
 }
-  
+
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-  
+
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    line-height: 1.5;
-    background-color: var(--background-light);
-    color: var(--dark);
-  }
-  
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 1.5;
+  background-color: var(--background-light);
+  color: var(--dark);
+}
+
 /* Body CSS */
 h2 {
-    background-color: var(--main-green);
-    color: var(--light);
-    padding: 5px 10px;
+  background-color: var(--main-green);
+  color: var(--light);
+  padding: 5px 10px;
 }
 
 /* Search bar CSS */
 form {
-    background-color: var(--accent-green);
-    color: var(--light);
-    margin-bottom: 5px;
-    padding: 10px 15px;
+  background-color: var(--accent-green);
+  color: var(--light);
+  margin-bottom: 5px;
+  padding: 10px 15px;
 }
 
 .search-bar {
-    width: 96%;
+  width: 96%;
+  height: 40px;
+  padding-left: 10px;
 }
-  
+
+.search-button {
+  width: 3%;
+  height: 40px;
+  cursor: pointer;
+}
+
 /* Recipe CSS */
+
 .fa-star {
-    color: var(--yellow);
-    margin: 0;
-    padding: 20px;
-  }
+  color: var(--yellow);
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 150s, ease-in-out;
+}
+
+.fa-star:hover {
+  transform: scale(105%);
+}
+
+.fav-text {
+  font-size: 12px;
+  margin-left: px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.alt-fav-text {
+  cursor: not-allowed;
+  text-indent: -9999px;
+}
 
 .recipeContainer {
-    padding: 0px 20px;
-}  
+  padding: 0px 20px;
+}
 
 .cardContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-top: 15px;
 }
 
 .recipe-detail,
-.nutritional-info,
+.fav-info,
 .youtube-vid {
-    background-color: var(--light);
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    border-radius: 10px;
+  background-color: var(--light);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .recipe-detail,
-.nutritional-info,
+.fav-info,
 .youtube-vid {
-    height: 100%;
-    box-sizing: border-box; 
+  height: 100%;
+  box-sizing: border-box;
 }
-  
+
+.list-item-container {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.list-item-container li {
+  flex-grow: 1;
+}
+
+.list-item-container button {
+  margin-left: 10px;
+}
+
+.view-button,
+.remove-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.view-button:hover {
+  background-color: #88cfd1;
+  transform: scale(112%);
+  color: #f6f6f6;
+}
+
+.remove-button:hover {
+  background-color: rgb(241, 127, 127);
+  color: #f6f6f6;
+}
