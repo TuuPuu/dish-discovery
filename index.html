@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🍔 DishDiscovery 🍔</title>
 
-    <!-- fontawesome -->
+    <!-- FONTAWESOME -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -14,7 +14,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- TEMP CSS STYLE SHEET -->
-    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <style>
       /* WE'LL ADD BOOTSTRAP LAST*/
     </style>
@@ -26,9 +26,7 @@
       <div>
         <!-- SEARCH BAR FORM -->
         <form>
-
           <div class="container">
-
             <input
               class="search-bar"
               type="text"
@@ -39,41 +37,40 @@
           </div>
         </form>
 
-        <i class="fa-solid fa-star"></i>
+        <!-- FAVOURITE BUTTON -->
+        <i class="fa-solid fa-star" id="addToFavorites">
+          <span class="fav-text">Add to Favourites</span></i
+        >
       </div>
 
       <div class="recipeContainer">
-
-          <!-- RECIPE DETAIL -->
-          <h3>Recipe Title</h3>
-          <div class="cardContainer">
+        <!-- RECIPE DETAIL -->
+        <h3>Here are your results:</h3>
+        <div class="cardContainer">
           <div class="recipe-detail">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-            voluptatibus tempore at porro dolorum natus ducimus eveniet earum
-            officia, laboriosam excepturi magni recusandae nemo similique quasi
-            quaerat accusamus repellat mollitia.
+            <h2>Recipe</h2>
+            <small>Your food adventure awaits...</small>
           </div>
 
-          <!-- NUTRITIONAL INFO -->
-          <div class="nutritional-info">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            libero laudantium mollitia veritatis error porro necessitatibus
-            animi consequuntur, eum eligendi fugiat tempore iusto, dolorem
-            numquam doloremque. Placeat vitae odio maxime.
+          <!-- FAV INFO -->
+          <div class="fav-info" id="favoritesContainer">
+            <h2>Favorites 🌟</h2>
+            <ul id="favoritesList"></ul>
           </div>
 
-          <!-- TOUTUBE COOKING TUTORIAL -->
+          <!-- YOUTUBE COOKING TUTORIAL -->
           <div class="youtube-vid">
-            
+            <h2>Tutorial</h2>
           </div>
         </div>
-        
       </div>
     </div>
 
     <!-- JAVASCIPT FILE BELOW -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script src="script.js"></script>
+    <!-- <script src="finalscript.js"></script> -->
+    <script src="food.js"></script>
+    <script src="youtube.js"></script>
+    <script src="storage.js"></script>
   </body>
 </html>
