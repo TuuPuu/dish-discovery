@@ -76,4 +76,6 @@ form {
     height: 100%;
     box-sizing: border-box; 
 }
-  
+  .recipeName{
+    color: red;
+  }
