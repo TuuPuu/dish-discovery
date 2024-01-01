@@ -1,6 +1,11 @@
+
+
 // VARIABLES
 let favoritesList = $("#favoritesList");
 let addToFavorites = $("#addToFavorites");
+
+  // Load Favourites
+  displayFavouritesList();
 
 // ADD TO FAVS
 addToFavorites.click(function () {
@@ -9,14 +14,20 @@ addToFavorites.click(function () {
 
   // checks if searchQuery already exists in savedSearches
   if (!savedSearches.includes(searchQuery)) {
+    console.log(`Add new favourite item. item=${searchQuery}`);
+
     savedSearches.push(searchQuery);
     localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
-    displaySavedSearches();
+    displayFavouritesList();
+
+  } else {
+    console.log(`Favourite item already exists. item=${searchQuery}`);
   }
 });
 
 // DISPLAY SAVED SEARCHES
-function displaySavedSearches() {
+function displayFavouritesList() {
+
   favoritesList.empty();
 
   // retrieve saved searches from local storage or create an empty array if it doesn't exist
@@ -71,5 +82,5 @@ function removeSearch(searchQuery) {
 
   localStorage.setItem("savedSearches", JSON.stringify(updatedSearches));
 
-  displaySavedSearches();
+  displayFavouritesList();
 }
