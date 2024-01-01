@@ -12,6 +12,10 @@ addToFavorites.click(function () {
   const searchQuery = $(".search-bar").val();
   const savedSearches = JSON.parse(localStorage.getItem("savedSearches")) || [];
 
+  if(searchQuery===""){
+    console.log("favourite item cannot be empty")
+    return
+  }
   // checks if searchQuery already exists in savedSearches
   if (!savedSearches.includes(searchQuery)) {
     console.log(`Add new favourite item. item=${searchQuery}`);
@@ -52,6 +56,7 @@ function displayFavouritesList() {
     });
 
     viewButton.click(function () {
+      $(".search-bar").val(savedSearches[i])
       getRecipe(savedSearches[i]); // passes the searchQuery to getRecipe
     });
 
