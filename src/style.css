@@ -120,3 +120,7 @@ form {
 #button {
   margin-left: ;
 }
+
+.container {
+  display: flex;
+}
