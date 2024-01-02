@@ -1,7 +1,7 @@
   function youtubeApi(recipeNameh2) {
 
 
-    var querUrl = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + recipeNameh2 + "%20recipe&type=video&videoEmbeddable=true&key=AIzaSyBjrSFm54Ngwe4Vz-BRAZVm1EM9wUba0f8"
+    var querUrl = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + recipeNameh2 + "%20recipe&type=video&videoEmbeddable=true&key=AIzaSyAk79jO8CvLdZ_YqsuS1D-8KE9hRawHOfY"
     fetch(querUrl)
       .then((res) => {
         return res.json()
@@ -22,11 +22,18 @@
       var divEl = $(".youtube-vid")
       divEl.empty();
 
+      if(!recipeNameh2){
+        console.log("recipe not found")
+        var noRecipe = $("<h3>").text("Recipe not found");
+        divEl.append(noRecipe);
+      }else{
+
       var youtubeIframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}?si=2JU_Yh3oZzQRoA_V" title=${videoTitle} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"></iframe>`
       var title = $("<h3>").text(videoTitle);
       var vlink = $("<a>").attr("href", fullUrl).text("watch Video");
 
       divEl.append(title, vlink, youtubeIframe)
+      }
 
     }
 
@@ -45,15 +52,19 @@
 
 
 
-
+var recipeDetail= $(".recipe-detail")
   // GET THE RECIPE
   function getRecipe(searchQuery) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         if (data.meals) {
           displayRecipe(data.meals[0]);
         } else {
+          $("small").hide()
+          var notFound= $("<h3>").text("Recipe not found");
+          recipeDetail.append(notFound)
           console.log("Meal not found");
         }
       })
