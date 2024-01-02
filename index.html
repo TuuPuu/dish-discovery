@@ -15,18 +15,18 @@
     />
     <!-- TEMP CSS STYLE SHEET -->
     <link rel="stylesheet" href="./src/style.css" />
-    <style>
-      /* WE'LL ADD BOOTSTRAP LAST*/
-    </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    
   </head>
 
   <body>
-    <div class="container">
-      <h2>🍔 DishDiscovery 🍔</h2>
+    <div class="container-fluid">
+      <h2 class="text-center mt-4 mb-3 py-2 rounded">🍔 DishDiscovery 🍔</h2>
       <div>
         <!-- SEARCH BAR FORM -->
         <form>
-          <div class="container">
+          <div class="container-fluid searchButton">
             <input
               class="search-bar"
               type="text"
@@ -37,31 +37,64 @@
           </div>
         </form>
 
+        <button type="button" class="btn btn-warning recipeContainer button" data-bs-toggle="modal" data-bs-target="#ButtonModal">
+          Click here to start
+        </button>
+  
+        <!-- Modal -->
+        <div class="modal fade" id="ButtonModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Welcome to the DishDiscovery</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Modal body content goes here -->
+                <h6>How the Website works</h6>
+                <ol>
+                  <li>Enter in any food recipe that you want</li>
+                  <li>Once you have found the recipe you want, a youtube video will apear related to that recipe</li>
+                  <li>You can also add the recipe to you your favourites, this your recipes and saved for the future</li>
+                </ol>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <!-- FAVOURITE BUTTON -->
         <i class="fa-solid fa-star" id="addToFavorites">
-          <span class="fav-text">Add to Favourites</span></i
-        >
+          <span class="fav-text">Add to Favourites</span></i>
+  
       </div>
 
-      <div class="recipeContainer">
+      <div class="recipeContainer container-fluid">
         <!-- RECIPE DETAIL -->
         <h3>Here are your results:</h3>
         <div class="cardContainer">
           <div class="recipe-detail">
-            <h2>Recipe</h2>
+            <h2 class="text-center py-1 rounded">Recipe</h2>
             <small>Your food adventure awaits...</small>
           </div>
 
+          
           <!-- FAV INFO -->
           <div class="fav-info" id="favoritesContainer">
-            <h2>Favorites 🌟</h2>
-            <ul id="favoritesList"></ul>
+            <h2 class="text-center py-1 rounded">Favorites 🌟</h2>
+            <ul class="p-0"  id="favoritesList"></ul>
           </div>
 
+
           <!-- YOUTUBE COOKING TUTORIAL -->
+
           <div class="youtube-container">
-            <h2 class="tutorial">Tutorial</h2>
+            <h2 class="text-center py-1 rounded">Tutorial</h2>
             <div class="youtube-vid">
+
 
           </div>
         </div>
@@ -71,6 +104,7 @@
     <!-- JAVASCIPT FILE BELOW -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <script src="finalscript.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./src/food.js"></script>
     <script src="./src/storage.js"></script>
    

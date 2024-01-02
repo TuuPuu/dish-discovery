@@ -26,7 +26,7 @@ body {
 h2 {
   background-color: var(--main-green);
   color: var(--light);
-  padding: 5px 10px;
+
 }
 
 /* Search bar CSS */
@@ -40,7 +40,7 @@ form {
 .search-bar {
   width: 96%;
   height: 40px;
-  padding-left: 10px;
+  
 }
 
 .search-button {
@@ -141,4 +141,24 @@ form {
 .remove-button:hover {
   background-color: rgb(241, 127, 127);
   color: #f6f6f6;
+}
+
+
+@media (max-width: 1200px) {
+  .container-fluid {
+    padding: 0 15px; 
+  }
+
+  .recipeContainer {
+    padding: 10px; 
+  }
+
+  .searchButton {
+    width: 100%; 
+  }
+
+  .recipeContainer .cardContainer {
+    display: flex;
+    flex-direction: column;
+  }
 }
