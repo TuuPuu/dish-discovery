@@ -63,3 +63,17 @@ As a group we worked really well together. No issues were faced. However, there 
 
 <ol>
 <li> When merging the branchs on github we should've kept certain things constant. For example, the API keys and URL. By not keeping this constant it led to many conflicts and in the end we had to manually add our work to the main branch which is not efficient. 
+</ol>
+
+## Website Preview
+
+ADD SCREENSHOTS OF THE SITE HERE
+
+## Collaborators
+
+<ol>
+<li> <a href='www.github.com/hitesh70738'> Hitesh Patel - Github Profile
+<li> <a href='https://github.com/TuuPuu'> Elora Ainoa - Github Profile
+<li> <a href='https://github.com/omar12ahmed'> Omar Ibrahim - Github Profile
+<li> <a href='https://github.com/celia103'> Celia Chan - Github Profile
+</ol>
