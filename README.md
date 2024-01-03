@@ -45,7 +45,7 @@ The following tools are to be used in this project:
 
 
 ## Project Description
-
+---
 The Dish Discovery Project is a fun food web application designed to help users explore new recipes and cooking ideas, watch easy related videos and save their favourite searches. 
 
 The main motivation behind Dish Discovery is to inspire culinary creativity and make the process of finding new and exciting recipes more accessible.
@@ -54,13 +54,11 @@ The project was built to address the common challenge of deciding what to cook b
 
 It aims to solve the problem of monotony in cooking and meal planning by offering a diverse range of recipes for users to try. 
 
-
 During the development of this project, valuable insights into web development, API integration, and user experience design were gained. Additionally, skills in handling asynchronous requests and data manipulation were honed.
 
 
 ## Table of Contents
-
-
+---
 - [Methodology](#methodology)
 - [Conclusion](#conclusion)
 - [Future Improvements](#futureimprovements)
@@ -80,22 +78,18 @@ This application is a single page web-application. It will ask the user for an i
 Below is our approach to this task:
 <ol>
 <li> We split the task up so that each group member is assigned a task. 
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
+<li> Planning and SetUp
+<li> Simple Front End Dev
+<li> API Integration
+<li> Local Storage and Modal
+<li> Modal finalisation & Debugging
+<li> Documentation and Debrief
 </ol>
 
 
 ## Conclusion
 ---
-
-
-
+Overall, we as a group felt we were put to our paces for this challenge. The main difficulties we faced were with the both APIs. But as tikto has mentioned documentation is the key to get out any mess. Documentation was one of the key reasons as to why we managed to pull it through this project. 
 
 ## Future Improvements
 ---
@@ -103,9 +97,9 @@ As a group we worked really well together. No issues were faced. However, there 
 
 <ol>
 <li> When merging the branches on github we should've kept certain things constant. For example, the API keys and URL. By not keeping this constant it led to many conflicts and in the end we had to manually add our work to the main branch which is not efficient. 
-<li> When merging the branches on github we should've kept certain things constant. For example, the API keys and URL. By not keeping this constant it led to many conflicts and in the end we had to manually add our work to the main branch which is not efficient. 
+<li> Use a different video API as youtube kept hitting its daily usage limit very quickly. 
+<li> Something out of the blue could be to implement docker, node and nginx. Docker so we can containerise the application so its easy to deploy if we decide to go to live with this project. Ngix would be a server for hosting the application. Node would be used for javascript.
 </ol>
-
 
 
 ## Website Preview
@@ -113,6 +107,8 @@ As a group we worked really well together. No issues were faced. However, there 
 ADD SCREENSHOTS OF THE SITE HERE
 
 ![alt text](assets/images/screenshot.png)
+
+<img src=''>
 
 
 
