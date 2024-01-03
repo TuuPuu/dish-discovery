@@ -1,7 +1,7 @@
   function youtubeApi(recipeNameh2) {
 
 
-    var querUrl = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + recipeNameh2 + "%20recipe&type=video&videoEmbeddable=true&key=AIzaSyAk79jO8CvLdZ_YqsuS1D-8KE9hRawHOfY"
+    var querUrl = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + recipeNameh2 + "%20recipe&type=video&videoEmbeddable=true&key=AIzaSyCWYHDHOF3joDIy2XVJrhBmfnKLRCRrgSY"
     fetch(querUrl)
       .then((res) => {
         return res.json()
@@ -9,16 +9,14 @@
         if (data.items.length > 0) {
           var videoId = data.items[0].id.videoId;
           var videoTitle = data.items[0].snippet.title;
-          var youtubeLink = "https://www.youtube.com/watch?v=";
-          var fullUrl = youtubeLink + videoId;
 
-          displayVideo(fullUrl, videoTitle, videoId)
+          displayVideo( videoTitle, videoId)
 
         } else {
           console.log("no video Found")
         };
       })
-    function displayVideo(fullUrl, videoTitle, videoId) {
+    function displayVideo( videoTitle, videoId) {
       var divEl = $(".youtube-vid")
       divEl.empty();
 
@@ -28,11 +26,10 @@
         divEl.append(noRecipe);
       }else{
 
-      var youtubeIframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}?si=2JU_Yh3oZzQRoA_V" title=${videoTitle} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"></iframe>`
+      var youtubeIframe = `<iframe class="iframe" width="" height="" src="https://www.youtube.com/embed/${videoId}?si=2JU_Yh3oZzQRoA_V" title=${videoTitle} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"></iframe>`
       var title = $("<h3>").text(videoTitle);
-      var vlink = $("<a>").attr("href", fullUrl).text("watch Video");
 
-      divEl.append(title, vlink, youtubeIframe)
+      divEl.append(title, youtubeIframe)
       }
 
     }
@@ -52,18 +49,25 @@
 
 
 
-var recipeDetail= $(".recipe-detail")
+var recipeDetail= $("#recipe-detail")
   // GET THE RECIPE
   function getRecipe(searchQuery) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
+         var notFound= "";
+
         if (data.meals) {
           displayRecipe(data.meals[0]);
-        } else {
+          console.log($("h6"))
+          $("h6").empty()
           $("small").hide()
-          var notFound= $("<h3>").text("Recipe not found");
+
+        } else {
+          recipeDetail.empty()
+          $("small").hide()
+          notFound= $("<h6>").text("Recipe not found")
           recipeDetail.append(notFound)
           console.log("Meal not found");
         }
@@ -79,7 +83,7 @@ var recipeDetail= $(".recipe-detail")
 
   // DISPLAY RECIPE
   function displayRecipe(data) {
-    const recipeSection = $(".recipe-detail");
+    const recipeSection = $("#recipe-detail");
     recipeSection.empty(); // this is here to clear previous content
 
     const recipeName = data.strMeal;
@@ -98,7 +102,6 @@ var recipeDetail= $(".recipe-detail")
         </div>
         <br>
     `;
-
     recipeSection.append(content);
     var recipeNameh21 = $(".recipeName").text()
     var recipeNameh2 = recipeNameh21 + " recipe"

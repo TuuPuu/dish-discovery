@@ -143,6 +143,11 @@ form {
   color: #f6f6f6;
 }
 
+.iframe{
+  width: 600px;
+  height: 400px;
+}
+
 
 @media (max-width: 1200px) {
   .container-fluid {
@@ -151,7 +156,14 @@ form {
 
   .recipeContainer {
     padding: 10px; 
+    
   }
+
+  .iframe{
+    width: auto;
+    height: auto;
+  }
+  
 
   .searchButton {
     width: 100%; 
