@@ -101,13 +101,13 @@ As a group we worked really well together. No issues were faced. However, there 
 ## Website Preview
 ---
 
-![Wireframe Screenshot](../dish-discovery/assets/dish%20discovery%20progression%20pics/01.jpg)
+![Wireframe Screenshot](./assets/dish%20discovery%20progression%20pics/01.jpg)
 
-![Application Screenshot 1](../dish-discovery/assets/dish%20discovery%20progression%20pics/02.png)
+![Application Screenshot 1](./assets/dish%20discovery%20progression%20pics/02.png)
 
-![Application Screenshot 2](../dish-discovery/assets/dish%20discovery%20progression%20pics/03.png)
+![Application Screenshot 2](./assets/dish%20discovery%20progression%20pics/03.png)
 
-![Application Screenshot 3](../dish-discovery/assets/dish%20discovery%20progression%20pics/04.png)
+![Application Screenshot 3](./assets/dish%20discovery%20progression%20pics/04.png)
 
 
 ## Installation
