@@ -92,13 +92,13 @@ Below is our approach to this task:
 
 
 ## Conclusion
-
+---
 
 
 
 
 ## Future Improvements
-
+---
 As a group we worked really well together. No issues were faced. However, there somethings we could improve on:
 
 <ol>
@@ -109,7 +109,7 @@ As a group we worked really well together. No issues were faced. However, there 
 
 
 ## Website Preview
-
+---
 ADD SCREENSHOTS OF THE SITE HERE
 
 ![alt text](assets/images/screenshot.png)
@@ -117,7 +117,7 @@ ADD SCREENSHOTS OF THE SITE HERE
 
 
 ## Installation
-
+---
 To run the Dish Discovery Project locally, follow these steps:
 
 Clone the repository to your local machine.
@@ -140,7 +140,7 @@ https://tuupuu.github.io/dish-discovery/
 
 
 ## Usage
-
+---
 - Enter your desired dish or cuisine in the search bar.
 - Click on the "Search" button to retrieve recipe suggestions.
 - Explore the displayed recipe instructions, ingredients and related video
@@ -149,17 +149,17 @@ https://tuupuu.github.io/dish-discovery/
 
 
 ## Collaborators
-
+---
 <ol>
-<li> <a href='www.github.com/hitesh70738'> Hitesh Patel - Github Profile
-<li> <a href='https://github.com/TuuPuu'> Elora Ainoa - Github Profile
-<li> <a href='https://github.com/omar12ahmed'> Omar Ibrahim - Github Profile
-<li> <a href='https://github.com/celia103'> Celia Chan - Github Profile
+<li> <a href='www.github.com/hitesh70738'> Hitesh Patel - Github Profile </a>
+<li> <a href='https://github.com/TuuPuu'> Elora Ainoa - Github Profile </a>
+<li> <a href='https://github.com/omar12ahmed'> Omar Ibrahim - Github Profile </a>
+<li> <a href='https://github.com/celia103'> Celia Chan - Github Profile </a>
 </ol>
 
 
-## License
-
+## Licenses
+---
 This project is licensed under the MIT License.
 
 
