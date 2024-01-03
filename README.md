@@ -1,6 +1,16 @@
 # DishDiscovery
  Navigate Flavour Frontiers!  A fun app to get recipes and tutorial videos
 
+## Table of Contents
+---
+- [Methodology](#methodology)
+- [Conclusion](#conclusion)
+- [Future Improvements](#futureimprovements)
+- [Website Preview](#websitepreview)
+- [Installation](#Installation)
+- [Usage](#usage)
+- [Collaborators](#collaborators)
+- [License](#license)
 
 ## Expectations
 ---
@@ -56,20 +66,6 @@ It aims to solve the problem of monotony in cooking and meal planning by offerin
 
 During the development of this project, valuable insights into web development, API integration, and user experience design were gained. Additionally, skills in handling asynchronous requests and data manipulation were honed.
 
-
-## Table of Contents
----
-- [Methodology](#methodology)
-- [Conclusion](#conclusion)
-- [Future Improvements](#futureimprovements)
-- [Website Preview](#websitepreview)
-- [Installation](#Installation)
-- [Usage](#usage)
-- [Collaborators](#collaborators)
-- [License](#license)
-
-
-
 ## Methodology
 ----
 This application is a single page web-application. It will ask the user for an input of a recipe of their choice. Once they click search it will populate a recipe and a youtube video linked to the recipe they have found. The user will also have the ability to add their recipe's to favourites, just so they can do a quick view on the recipe when needed. 
@@ -104,11 +100,15 @@ As a group we worked really well together. No issues were faced. However, there 
 
 ## Website Preview
 ---
-ADD SCREENSHOTS OF THE SITE HERE
 
-![alt text](assets/images/screenshot.png)
+<img src='../dish-discovery/assets/dish%20discovery%20progression%20pics/01.jpg'>
 
-<img src=''>
+<img src='../dish-discovery/assets/dish%20discovery%20progression%20pics/02.png'>
+
+<img src='../dish-discovery/assets/dish%20discovery%20progression%20pics/03.png'>
+
+<img src='../dish-discovery/assets/dish%20discovery%20progression%20pics/04.png'>
+
 
 
 
@@ -120,9 +120,6 @@ Clone the repository to your local machine.
  Navigate to the project directory.
 Open the index.html file in a web browser.
 
-
-
-
 Repo can be accessed here:
 
 https://github.com/TuuPuu/dish-discovery
@@ -131,8 +128,6 @@ https://github.com/TuuPuu/dish-discovery
 Deployed site can be accessed here:
 
 https://tuupuu.github.io/dish-discovery/
-
-
 
 
 ## Usage
