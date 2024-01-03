@@ -157,7 +157,6 @@ https://tuupuu.github.io/dish-discovery/
 <li> <a href='https://github.com/celia103'> Celia Chan - Github Profile </a>
 </ol>
 
-
 ## Licenses
 ---
 This project is licensed under the MIT License.
