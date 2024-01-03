@@ -37,12 +37,22 @@ form {
     color: var(--light);
     margin-bottom: 5px;
     padding: 10px 15px;
+    display: flex;
+    align-items: center;
 }
 
 .search-bar {
-    width: 96%;
+    flex: 1;
+    padding: 10px;
 }
-  
+
+.search-button {
+  padding: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  height: 40px;
+}
+
 /* Recipe CSS */
 .fa-star {
     color: var(--yellow);
