@@ -37,16 +37,20 @@ form {
   padding: 10px 15px;
 }
 
+.searchButton{
+  display: inline-flex;
+  flex: 1 1 300px;
+}
+
 .search-bar {
-  width: 96%;
-  height: 40px;
-  
+  flex: 1;
+  padding: 10px;
 }
 
 .search-button {
-  width: 3%;
-  height: 40px;
+  padding: 10px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 /* Recipe CSS */
