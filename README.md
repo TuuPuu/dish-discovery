@@ -93,7 +93,7 @@ As a group we worked really well together. No issues were faced. However, there 
 
 <ol>
 <li> When merging the branches on github we should've kept certain things constant. For example, the API keys and URL. By not keeping this constant it led to many conflicts and in the end we had to manually add our work to the main branch which is not efficient. 
-<li> Use a different video API as youtube kept hitting its daily usage limit very quickly. 
+<li> Use a different video API as youtube kept hitting its daily usage limit very quickly.
 <li> Something out of the blue could be to implement docker, node and nginx. Docker so we can containerise the application so its easy to deploy if we decide to go to live with this project. Ngix would be a server for hosting the application. Node would be used for javascript.
 </ol>
 
@@ -101,15 +101,13 @@ As a group we worked really well together. No issues were faced. However, there 
 ## Website Preview
 ---
 
-<img src='../dish-discovery/assets/dish%20discovery%20progression%20pics/01.jpg'>
+![Wireframe Screenshot](./assets/dish%20discovery%20progression%20pics/01.jpg)
 
-<img src='../dish-discovery/assets/dish%20discovery%20progression%20pics/02.png'>
+![Application Screenshot 1](./assets/dish%20discovery%20progression%20pics/02.png)
 
-<img src='../dish-discovery/assets/dish%20discovery%20progression%20pics/03.png'>
+![Application Screenshot 2](./assets/dish%20discovery%20progression%20pics/03.png)
 
-<img src='../dish-discovery/assets/dish%20discovery%20progression%20pics/04.png'>
-
-
+![Application Screenshot 3](./assets/dish%20discovery%20progression%20pics/04.png)
 
 
 ## Installation
